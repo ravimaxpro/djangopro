@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load static %}
+{% if user.is_authenticated %}
+<div align="right">
+<a>Logged User : {{ user.get_username }}  </a>
+    <a href='{% url "logout" %}' class="btn btn-primary" role="button"> Logout </a>
+{% else %}
+    <p>Please log in.</p>
+    <a href='{% url "login" %}' class="btn btn-primary" role="button"> Login </a> <br><br>
+    <a href='{% url "homepage" %}' class="btn btn-primary" role="button"> Home </a>
+{% endif %}
+
+
+</body>
+</html>
